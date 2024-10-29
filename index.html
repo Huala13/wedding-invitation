@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>清暘 & 芊儀 我們結婚囉</title>
+    <link rel="icon" type="image/png" href="icon.png">
     <style>
         body {
             margin: 0;
@@ -91,11 +92,6 @@
                 display: block;
             }
         }
-        @media screen and (max-width: 600px) {
-            .container {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
@@ -135,7 +131,7 @@
             startX = e.clientX || e.touches[0].clientX; // 获取触摸或鼠标的 X 坐标
             initialX = parseFloat(mainImage.style.left) || 50; // 获取初始位置，默认值为 0
             mainImage.style.cursor = 'grabbing'; // 更改鼠标样式
-            e.preventDefault();
+            // e.preventDefault();
         };
 
         // 鼠标移动事件
@@ -168,7 +164,6 @@
 
             // 获取最终位置并转换为 vw
             const finalLeftVW = parseFloat(mainImage.style.left);
-            console.log(finalLeftVW);
         };
 
         // 添加事件监听
@@ -180,11 +175,11 @@
                 
                 mainImage.addEventListener('touchstart', (e) => {
                     onMouseDown(e);
-                    e.preventDefault(); // 阻止默认触摸事件
+                    // e.preventDefault(); // 阻止默认触摸事件
                 });
                 document.addEventListener('touchmove', (e) => {
                     onMouseMove(e);
-                    e.preventDefault(); // 阻止默认触摸事件
+                    // e.preventDefault(); // 阻止默认触摸事件
                 });
                 document.addEventListener('touchend', onMouseUp);
 
